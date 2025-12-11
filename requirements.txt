@@ -2,3 +2,4 @@ python-dotenv
 langchain
 langchain-deepseek
 fastapi
+uvicorn[standard]

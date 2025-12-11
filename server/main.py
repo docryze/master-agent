@@ -1,30 +1,13 @@
 from dotenv import load_dotenv
-from langchain.agents import create_agent
-from langchain_core.messages.base import BaseMessage, BaseMessageChunk
-from langchain.messages import HumanMessage, AIMessageChunk
+from fastapi import FastAPI, WebSocket
 
 load_dotenv()
+app = FastAPI()
 
 
-def main():
-    agent = create_agent(
-        model="deepseek-chat",
-        system_prompt="你是一个助手",
-    )
-
-    response = agent.stream(
-        {"messages": [
-            HumanMessage("帮我写一个python web项目")
-        ]},
-        stream_mode="messages"
-    )
-
-    for messages in response:
-        for message in messages:
-            if isinstance(message, BaseMessageChunk):
-                print(message.content, end="", flush=True)
-
-
-if __name__ == "__main__":
-
-    main()
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        data = await websocket.receive_text()
+        await websocket.send_text(f"Message text was: {data}")
