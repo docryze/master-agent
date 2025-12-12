@@ -1,5 +1,10 @@
 python-dotenv
+
 langchain
 langchain-deepseek
+langchain-mcp-adapters
+
 fastapi
 uvicorn[standard]
+
+# textual[syntax]
