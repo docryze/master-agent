@@ -1,8 +1,8 @@
-import asyncio
+import os
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
 
-async def init_multi_server_mcp_client(dir: str = "./code_dir"):
+async def init_multi_server_mcp_client(dir: str = os.getcwd() + "/temp"):
     client = MultiServerMCPClient(
         {
             "filesystem": {

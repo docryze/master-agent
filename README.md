@@ -4,3 +4,6 @@ C. 编码实现 (Coding)核心开发编写代码、单元测试、代码审查 (
 D. 集成测试 (Testing)质量保证功能测试、集成测试、性能测试、修复 Bug。
 E. 部署发布 (Deployment)上线与交付构建发布包、环境准备、灰度发布、正式上线。
 F. 运维监控 (Monitoring)运行与反馈线上监控、日志分析、收集用户反馈、性能调优。
+
+
+python -m server.agents.coordinator_agent
