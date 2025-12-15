@@ -1,0 +1,7 @@
+# uv.toml
+
+# 配置默认的索引 URL (Index URL)
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+
+# 如果需要额外的索引源，可以添加 extra-index-url
+# extra-index-url = ["https://pypi.doubanio.com/simple/"]
